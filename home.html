@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Seleção +praTI</title>
+        <meta charset='UTF-8'>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+    </head>
+
+    <body>
+
+        <div id='barra_lateral'>
+            
+            <img id="logo_maisprati" src="logo_maisprati.png" legend='exemplo'>
+
+            
+            <table id='dadosAluno'>                
+
+                <tr>
+                    <td class='dados'>Nome:<br><input class='input_dados' id='nome'><p id="msg_aviso_nome"></p></td>
+                </tr>
+                <tr>
+                    <td class='dados'>Telefone:<br><input class='input_dados'  id='telefone' placeholder="(DDD) + Número" maxlength="11"><p id="msg_aviso_telefone"></p></td>
+                </tr>
+                <tr>
+                    <td class='dados'>Data de Nascimento:<br><input type='date'  class='input_dados' id='nascimento' ><p id="msg_aviso_nascimento"></p></td>
+                </tr>
+                <tr>
+                    <td class='dados'>Nota do(a) Aluno(a):<br><input  class='input_dados' id='nota' maxlength="4"><p id="msg_aviso_nota"></p></td>
+                </tr>
+                <tr>
+                    <td id='td_btn_gravar'><input id='btn_gravar' type='button' value='Gravar' onclick='gravaAluno()' onmouseover='alteraCorBotaoGravar()' onmouseout='alteraParaCorPreviaBotaoGravar()'></td>
+                </tr>
+    
+            </table>
+
+        </div>
+
+        <div id='area_registro'>
+                           
+            <table id="registroAlunos"></table>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,32 @@
+>> Seleção +praTI - Jan/22 <<<
+
+Introdução à programação:
+
+Descrição do desafio:
+
+    Criar um Cadastro/Exibição de alunos em uma página web usando JavaScriot e HTML.
+
+    Requisitos:
+
+        a. Página HTML (com CSS) contendo um formulário para cadastro de alunos.
+        b. Criar aluno.
+        c. Ao criar um aluno, exibir os dados do mesmo na mesma página, logo abaixo
+        do formulário, em linhas. Uma linha para cada aluno.
+        d. Informações de um aluno:
+            I. Nome
+            II. Telefone
+            III. Data de nascimento
+            IV. Nota final do curso.
+        e. Ao cadastrar um aluno, mostrar mensagem de sucesso e atualizar a lista com os alunos.
+
+     Requisitos opcionais:
+
+        a. Usar bootstrap;
+        b. Opção de remover o aluno.
+
+    - O avaliado deve manipular o DOM para atualizar a lista.
+    - Não deve ser usado nenhum framework neste projeto. Deve-se usar recursos do JavaScript nativo somente.
+    - Todas as informações ficam  na memória. Não é necessário cadastrar em banco de dados. Ou seja, quando encerrar a aplicação, perde-se todo o histórico.
+    - O avaliado deve disponibilizar seu projeto no GitHub com link público para que as empresas mantenedoras tenham acesso.
+
+   
