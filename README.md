@@ -1,2 +1,10 @@
-# projeto_selecao_maisprati_jan_22
-Repositório criado para armazenar o código fonte do projeto que será avaliado pelas mantenedoras da iniciativa +praTI.
+# Seleção +praTI - Jan/22
+
+## CRUD sem DB.
+
+### Características:
+
+  - CRUD construído com as tecnologias HTML, CSS e JavaScript.
+  - Utilizada a IDE Visual Studio Code para a construção da aplicação.
+  - A aplicação armazena os dados em tempo de execução. Logo, não há banco de dados no presente projeto.
+
