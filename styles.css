@@ -66,22 +66,24 @@ input#btn_gravar {
 
 }
 
-tr#cabecalho {
-    text-align: center;
-}
-
-td.td_cabecalho {
-    text-transform: uppercase;
-    padding: 5px;
-    border: 1px solid #ffffff;
+input.btn_editar, input.btn_excluir {
+    color: #ffffff;
+    font-weight: bolder;
+    border: 1px solid white;
     background-color: #be622d;
-    color:white;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: lighter;
 }
 
-td.td_dados {
-    text-align: center;
-    border: 1px solid black;
+input.btn_gravar_alt {
+    color: #ffffff;
+    font-weight: bolder;
+    border: 1px solid white;
+    background-color: #be622d;
     padding: 5px;
+    font-size: 14px;
+    font-weight: lighter;
 }
 
 p#msg_aviso_nome, #msg_aviso_telefone, #msg_aviso_nascimento, #msg_aviso_nota {
@@ -95,4 +97,24 @@ p#msg_aviso_nome, #msg_aviso_telefone, #msg_aviso_nascimento, #msg_aviso_nota {
 td#btn_gravar_alteracoes {
     border: 1px solid black;
     text-align: center;
+}
+
+tr#cabecalho {
+    text-align: center;
+    
+}
+
+td.td_cabecalho {
+    text-transform: uppercase;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    background-color: #be622d;
+    color:white;
+
+}
+
+td.td_dados {
+    text-align: center;
+    border: 1px solid black;
+    width: fit-content;
 }

@@ -8,6 +8,7 @@
         <meta charset='UTF-8'>
         <script src="scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="shortcut icon" type="images/png" href="./images/icone.ico">
 
     </head>
 
@@ -15,25 +16,24 @@
 
         <div id='barra_lateral'>
             
-            <img id="logo_maisprati" src="logo_maisprati.png" legend='exemplo'>
+            <img id="logo_maisprati" src="./images/logo_maisprati.png" legend='exemplo'>
 
-            
             <table id='dadosAluno'>                
 
                 <tr>
                     <td class='dados'>Nome:<br><input class='input_dados' id='nome'><p id="msg_aviso_nome"></p></td>
                 </tr>
                 <tr>
-                    <td class='dados'>Telefone:<br><input class='input_dados'  id='telefone' placeholder="(DDD) + Número" maxlength="11"><p id="msg_aviso_telefone"></p></td>
+                    <td class='dados'>Telefone:<br><input class='input_dados'  id='telefone' placeholder="(DDD) + Número" maxlength="11" onkeypress="verificaSeEhNumero('telefone', 'msg_aviso_telefone')"><p id="msg_aviso_telefone"></p></td>
                 </tr>
                 <tr>
                     <td class='dados'>Data de Nascimento:<br><input type='date'  class='input_dados' id='nascimento' ><p id="msg_aviso_nascimento"></p></td>
                 </tr>
                 <tr>
-                    <td class='dados'>Nota do(a) Aluno(a):<br><input  class='input_dados' id='nota' maxlength="4"><p id="msg_aviso_nota"></p></td>
+                    <td class='dados'>Nota do(a) Aluno(a):<br><input class='input_dados' type='number' id='nota' maxlength="4"><p id="msg_aviso_nota"></p></td>
                 </tr>
                 <tr>
-                    <td id='td_btn_gravar'><input id='btn_gravar' type='button' value='Gravar' onclick='gravaAluno()' onmouseover='alteraCorBotaoGravar()' onmouseout='alteraParaCorPreviaBotaoGravar()'></td>
+                    <td id='td_btn_gravar'><input id='btn_gravar' type='button' value='Gravar' onclick='gravaAluno()' onmouseover='alteraCorBotao("btn_gravar")' onmouseout='alteraParaCorPreviaBotao("btn_gravar")'></td>
                 </tr>
     
             </table>

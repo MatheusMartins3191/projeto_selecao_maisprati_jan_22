@@ -1,9 +1,10 @@
 var i = 0; //Variável criada para servir de index para o array alunos[].
-var alunos = []; //Array criado para armazenar os objetos aluno 
+var alunos = []; //Array criado para armazenar os objetos aluno. 
 var registro = []; //Array criado para armazenar as tags HTML responsáveis por exibir os alunos registrados.
 var novoRegistro = []; //Array criado para armazenar as tags HTML responsáveis por exibir na tela os campos para alteração de um aluno.
 var arrayData = []; //Array criado para armazenar os caracteres da data de nascimento dos alunos cadastrados.
 
+//Cabecalho do registro de alunos. A essa variável são concatenadas novas tags HTML para que seja exibido na tela o registro de um novo aluno.
 var msg = "<tr id='cabecalho'><td class='td_cabecalho'>Nome</td><td class='td_cabecalho'>Telefone</td><td class='td_cabecalho' >Nascimento</td><td class='td_cabecalho'>Nota</td><td class='td_cabecalho'>Opções</td></tr>";
 
 //Função construtora do Objeto Aluno.
@@ -43,8 +44,7 @@ function exibirRegistros(a) {
     
     var registroAlunos = document.getElementById('registroAlunos');
 
-    registro[a.id] = "<tr><td class='td_dados'>" + a.nome + "</td><td class='td_dados'>" + a.telefone + "</td><td class='td_dados'>" + alteraEstiloData(a.nascimento) + "</td><td class='td_dados'>" + a.nota + "</td><td class='td_dados'><input type='button'" 
-                + "value='Editar' onclick='alterarAluno("+a.id+", registro["+a.id+"])'><input type='button' value='Excluir' onClick='excluiRegistro(registro[" + a.id + "])'></td></tr>";
+    registro[a.id] = "<tr><td class='td_dados'>" + a.nome + "</td><td class='td_dados'>" + a.telefone + "</td><td class='td_dados'>" + alteraEstiloData(a.nascimento) + "</td><td class='td_dados'>" + a.nota + "</td><td class='td_dados'><input class='btn_editar' id='btn_editar"+a.id+"' type='button' value='Editar' onmouseover='alteraCorBotao(\"btn_editar"+a.id+"\")' onmouseout='alteraParaCorPreviaBotao(\"btn_editar"+a.id+"\")' onclick='alterarAluno("+a.id+", registro["+a.id+"])'><input class='btn_excluir' id='btn_excluir"+a.id+"' onmouseover='alteraCorBotao(\"btn_excluir"+a.id+"\")' onmouseout='alteraParaCorPreviaBotao(\"btn_excluir"+a.id+"\")' type='button' value='Excluir' onClick='excluiRegistro(registro[" + a.id + "])'></td></tr>";
 
     msg += registro[a.id];
     registroAlunos.innerHTML = msg;
@@ -57,9 +57,7 @@ function alterarAluno(a, b) {
     var registroAlunos = document.getElementById('registroAlunos');
     var dadosAntigos = alunos[a];
 
-    novoRegistro[a] = "<tr><td class='td_dados'><input id='novoNome"+a+"' type='text' value='" + dadosAntigos.nome + "'></td><td class='td_dados'><input id='novoTelefone"+a+"' type='text' value='" + dadosAntigos.telefone + "' maxlength='11'></td>"
-                        + "<td class='td_dados'><input id='novoNascimento"+a+"' type='date' value='" + dadosAntigos.nascimento + "'></td><td class='td_dados'><input id='novaNota"+a+"' type='text' value='" + dadosAntigos.nota + "' maxlength='4'></td>" 
-                            + "<td id='btn_gravar_alteracoes'><input  type='button' value='Gravar' onclick='gravarAlteracoes("+a+", novoRegistro["+a+"])'></td></tr>";
+    novoRegistro[a] = "<tr><td class='td_dados'><input id='novoNome"+a+"' type='text' value='" + dadosAntigos.nome + "'></td><td class='td_dados'><input id='novoTelefone"+a+"' type='text' value='" + dadosAntigos.telefone + "' maxlength='11'></td><td class='td_dados'><input id='novoNascimento"+a+"' type='date' value='" + dadosAntigos.nascimento + "'></td><td class='td_dados'><input id='novaNota"+a+"' type='number' value='" + dadosAntigos.nota + "' maxlength='4'></td><td id='btn_gravar_alteracoes'><input class='btn_gravar_alt' id='btn_gravar_alt"+dadosAntigos.id+"' type='button' value='Gravar' onclick='gravarAlteracoes("+a+", novoRegistro["+a+"])' onmouseover='alteraCorBotao(\"btn_gravar_alt"+dadosAntigos.id+"\")' onmouseout='alteraParaCorPreviaBotao(\"btn_gravar_alt"+dadosAntigos.id+"\")'></td></tr>";
 
     msg = msg.replace(b, novoRegistro[a]);
     registroAlunos.innerHTML = msg;
@@ -82,8 +80,7 @@ function gravarAlteracoes(a, b) {
         alunos[a].nascimento = novoNascimento;
         alunos[a].nota = novaNota;
 
-        registro[alunos[a].id] = "<tr><td class='td_dados'>" + alunos[a].nome+ "</td><td class='td_dados'>" + alunos[a].telefone + "</td><td class='td_dados'>" + alteraEstiloData(alunos[a].nascimento) + "</td><td class='td_dados'>" + alunos[a].nota + "</td><td class='td_dados'><input type='button'" 
-                                + "value='Editar' onclick='alterarAluno("+alunos[a].id+", registro["+alunos[a].id+"])'><input type='button' value='Excluir' onClick='excluiRegistro(registro[" + alunos[a].id + "])'> </td></tr>";
+        registro[alunos[a].id] = "<tr><td class='td_dados'>" + alunos[a].nome+ "</td><td class='td_dados'>" + alunos[a].telefone + "</td><td class='td_dados'>" + alteraEstiloData(alunos[a].nascimento) + "</td><td class='td_dados'>" + alunos[a].nota + "</td><td class='td_dados'><input class='btn_editar' id='btn_editar"+alunos[a].id+"' type='button'value='Editar' onmouseover='alteraCorBotao(\"btn_editar"+alunos[a].id+"\")' onmouseout='alteraParaCorPreviaBotao(\"btn_editar"+alunos[a].id+"\")' onclick='alterarAluno("+alunos[a].id+", registro["+alunos[a].id+"])'><input type='button' class='btn_excluir' id='btn_excluir"+alunos[a].id+"' value='Excluir' onmouseover='alteraCorBotao(\"btn_excluir"+alunos[a].id+"\")' onmouseout='alteraParaCorPreviaBotao(\"btn_excluir"+alunos[a].id+"\")' onClick='excluiRegistro(registro[" + alunos[a].id + "])'> </td></tr>";
 
         novoRegistro[a] = "";
 
@@ -155,24 +152,24 @@ function verificaSeDadosEstaoPreenchidos() {
 }
 
 //Função que altera a cor de botão quando o envento 'onmouseover' é acionado.
-function alteraCorBotaoGravar() {
+function alteraCorBotao(id) {
 
-    var btn_gravar = document.getElementById('btn_gravar');
+    var btn= document.getElementById(id);
 
-    btn_gravar.style.backgroundColor = "#ffffff";
-    btn_gravar.style.color = "#be622d";
-    btn_gravar.style.borderColor = "#be622d";
+    btn.style.backgroundColor = "#ffffff";
+    btn.style.color = "#be622d";
+    btn.style.borderColor = "#be622d";
 
 }
 
 //Função que altera a cor de botão quando o evento 'onmouseout' é acionado.
-function alteraParaCorPreviaBotaoGravar() {
+function alteraParaCorPreviaBotao(id) {
 
-    var btn_gravar = document.getElementById('btn_gravar');
+    var btn = document.getElementById(id);
 
-    btn_gravar.style.backgroundColor = "#be622d";
-    btn_gravar.style.color = "#ffffff";
-    btn_gravar.style.borderColor = "#ffffff";
+    btn.style.backgroundColor = "#be622d";
+    btn.style.color = "#ffffff";
+    btn.style.borderColor = "#ffffff";
 
 }
 
@@ -189,5 +186,19 @@ function alteraEstiloData(data) {
     novaData = dia + "/" + mes + "/" + ano;
     
     return novaData;
+
+}
+
+//Função criada para verificar se o número inserido no campo Telefone é um número.
+function verificaSeEhNumero(id, id_msg) {
+    var input = document.getElementById(id);
+    var aviso = document.getElementById(id_msg);
+
+    if (isNaN(input.value)) {
+        aviso.innerHTML = "Favor digitar um número válido."
+        input.value = "";
+    } else {
+        aviso.innerHTML = "";
+    }
 
 }
