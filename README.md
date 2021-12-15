@@ -1,6 +1,4 @@
-<span style="color:orange">Seleção +praTI - Jan/22</span>
-
-## CRUD sem DB.
+# Seleção +praTI - Jan/22
 
 ### Características:
 
